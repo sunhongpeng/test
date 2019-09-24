@@ -150,6 +150,8 @@ run;
 quit;
 %mend;
 
+
+/*6.实例分析，CHRLS数据，慢性病集中指数分解*/
 data all;
   set diabetes.all2011_2;
   array var(8) chronic1 class_income agegroup sex education urban_nbs Uninsured BMI;
@@ -161,4 +163,6 @@ run;
 %decilogit(data=all,y=chronic8,w=income,
 x=sex education urban_nbs Uninsured BMI,
 out=www);
+
+
 
